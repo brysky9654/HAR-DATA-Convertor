@@ -41,6 +41,7 @@
             openButton.TabIndex = 1;
             openButton.Text = "Open";
             openButton.UseVisualStyleBackColor = true;
+            openButton.Click += this.openButton_Click;
             // 
             // fileListView
             // 
