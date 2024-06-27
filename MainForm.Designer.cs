@@ -28,25 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            HarFileList = new ListBox();
+            openButton = new Button();
+            fileListView = new ListView();
             SuspendLayout();
             // 
-            // HarFileList
+            // openButton
             // 
-            HarFileList.FormattingEnabled = true;
-            HarFileList.ItemHeight = 15;
-            HarFileList.Location = new Point(40, 30);
-            HarFileList.Margin = new Padding(5);
-            HarFileList.Name = "HarFileList";
-            HarFileList.Size = new Size(400, 244);
-            HarFileList.TabIndex = 0;
+            openButton.Location = new Point(95, 305);
+            openButton.Name = "openButton";
+            openButton.Size = new Size(75, 23);
+            openButton.TabIndex = 1;
+            openButton.Text = "Open";
+            openButton.UseVisualStyleBackColor = true;
+            // 
+            // fileListView
+            // 
+            fileListView.Location = new Point(45, 20);
+            fileListView.Name = "fileListView";
+            fileListView.Size = new Size(400, 275);
+            fileListView.TabIndex = 2;
+            fileListView.UseCompatibleStateImageBehavior = false;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(484, 461);
-            Controls.Add(HarFileList);
+            ClientSize = new Size(484, 361);
+            Controls.Add(fileListView);
+            Controls.Add(openButton);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HAR-DATA Convertor";
@@ -54,7 +63,7 @@
         }
 
         #endregion
-
-        private ListBox HarFileList;
+        private Button openButton;
+        private ListView fileListView;
     }
 }
