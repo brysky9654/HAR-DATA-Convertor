@@ -30,11 +30,12 @@
         {
             openButton = new Button();
             fileListView = new ListView();
+            startButton = new Button();
             SuspendLayout();
             // 
             // openButton
             // 
-            openButton.Location = new Point(95, 305);
+            openButton.Location = new Point(140, 310);
             openButton.Name = "openButton";
             openButton.Size = new Size(75, 23);
             openButton.TabIndex = 1;
@@ -49,11 +50,21 @@
             fileListView.TabIndex = 2;
             fileListView.UseCompatibleStateImageBehavior = false;
             // 
+            // startButton
+            // 
+            startButton.Location = new Point(275, 310);
+            startButton.Name = "startButton";
+            startButton.Size = new Size(75, 23);
+            startButton.TabIndex = 4;
+            startButton.Text = "Start";
+            startButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(484, 361);
+            Controls.Add(startButton);
             Controls.Add(fileListView);
             Controls.Add(openButton);
             Name = "MainForm";
@@ -65,5 +76,6 @@
         #endregion
         private Button openButton;
         private ListView fileListView;
+        private Button startButton;
     }
 }
