@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             openButton = new Button();
-            fileListView = new ListView();
             startButton = new Button();
+            fileList = new ListBox();
             SuspendLayout();
             // 
             // openButton
@@ -41,15 +41,7 @@
             openButton.TabIndex = 1;
             openButton.Text = "Open";
             openButton.UseVisualStyleBackColor = true;
-            openButton.Click += this.openButton_Click;
-            // 
-            // fileListView
-            // 
-            fileListView.Location = new Point(45, 20);
-            fileListView.Name = "fileListView";
-            fileListView.Size = new Size(400, 275);
-            fileListView.TabIndex = 2;
-            fileListView.UseCompatibleStateImageBehavior = false;
+            openButton.Click += btn_Open_Click;
             // 
             // startButton
             // 
@@ -59,14 +51,24 @@
             startButton.TabIndex = 4;
             startButton.Text = "Start";
             startButton.UseVisualStyleBackColor = true;
+            startButton.Click += startButton_Click;
+            // 
+            // fileList
+            // 
+            fileList.FormattingEnabled = true;
+            fileList.ItemHeight = 15;
+            fileList.Location = new Point(40, 35);
+            fileList.Name = "fileList";
+            fileList.Size = new Size(400, 244);
+            fileList.TabIndex = 5;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(484, 361);
+            Controls.Add(fileList);
             Controls.Add(startButton);
-            Controls.Add(fileListView);
             Controls.Add(openButton);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
@@ -76,7 +78,7 @@
 
         #endregion
         private Button openButton;
-        private ListView fileListView;
         private Button startButton;
+        private ListBox fileList;
     }
 }

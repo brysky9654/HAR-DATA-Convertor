@@ -2,7 +2,8 @@ namespace HAR_DATA_Convertor
 {
     public partial class MainForm : Form
     {
-        private List<string> filePaths = new List<string>();
+        private List<string> filePaths;
+        private List<string> fileNames;
 
         public MainForm()
         {
@@ -13,17 +14,24 @@ namespace HAR_DATA_Convertor
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Data files (*.data)|*.data|All files (*.*)|*.*";
+                openFileDialog.Filter = "Data files (*.har)|*.har|All files (*.*)|*.*";
                 openFileDialog.Multiselect = true;
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     filePaths = openFileDialog.FileNames.ToList();
                     fileNames = filePaths.Select(System.IO.Path.GetFileName).ToList();
-                    FileTextBox.Text = string.Join("\r\n", fileNames);
-                    string baseDirectory = Path.GetDirectoryName(filePaths[0]);
-                    hashCodesFilePath = Path.Combine(baseDirectory, @"..\..\HashCode") + "\\hashCodes.hc";
+
+                    foreach (var fileName in fileNames)
+                    {
+                        fileList.Items.Add(fileName);
+                    }
                 }
             }
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
