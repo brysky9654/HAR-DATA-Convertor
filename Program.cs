@@ -1,3 +1,5 @@
+using HarParser;
+
 namespace HAR_DATA_Convertor
 {
     internal static class Program
